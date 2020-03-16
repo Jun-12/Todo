@@ -31,7 +31,7 @@ export default {
                     this.$store.dispatch("changeUserData", {
                         user: data.user
                     });
-                    this.$router.replace("/signup");
+                    this.$router.replace("/");
                 }
             });
         }

@@ -19,18 +19,12 @@ const routes = [
   {
     path: '/signin',
     name: 'Signin',
-    component: Signin,
-    meta: {
-      isPublic: true
-    }
+    component: Signin
   },
   {
     path: '/signup',
     name: 'Signup',
-    component: Signup,
-    meta: {
-      isPublic: true
-    }
+    component: Signup
   }
 ]
 

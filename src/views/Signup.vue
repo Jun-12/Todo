@@ -28,11 +28,12 @@ export default {
     methods: {
         signUp() {
             firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
-            .then(data => {
-                data.user.updateProfile({
+            .then((user) => {
+                user = firebase.auth().currentUser;
+                user.updateProfile({
                     displayName: this.name
                 });
-                data.user.sendEmailVerification().then(() => {
+                user.sendEmailVerification().then(() => {
                     this.$router.replace("/signin");
                 });
             });
