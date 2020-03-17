@@ -1,10 +1,19 @@
 <template>
   <div class="home">
-    <h1>表示確認</h1>
+    
   </div>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      todos: [
+        "task1",
+        "task2",
+        "task3"
+      ]
+    }
+  }
 }
 </script>
