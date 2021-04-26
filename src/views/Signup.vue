@@ -2,14 +2,14 @@
   <div class="signup">
       <div class="box">
           <p class="title">新規登録</p>
-          <form>
+          <div class="form">
               <input type="text" placeholder="ユーザーネーム" v-model="name">
               <input type="email" placeholder="メールアドレス" v-model="email">
               <input type="password" placeholder="パスワード" v-model="password">
               <button @click="signUp">登録</button>
 
               <p class="login">ログインは<a class="router" @click="$router.push('/signin')">こちら</a></p>
-          </form>
+          </div>
       </div>
   </div>
 </template>
@@ -56,7 +56,7 @@ export default {
     font-weight: bold;
     text-align: center;
 }
-form {
+.form {
     text-align: center;
 }
 input {

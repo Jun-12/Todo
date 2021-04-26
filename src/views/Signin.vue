@@ -2,13 +2,13 @@
   <div class="signin">
       <div class="box">
           <p class="title">ログイン</p>
-          <form>
+          <div class="form">
               <input type="email" placeholder="メールアドレス" v-model="email" />
               <input type="password" placeholder="パスワード" v-model="password" />
               <button @click="signIn">ログイン</button>
 
               <p class="login">会員登録は<a class="router" @click="$router.push('/signup')">こちら</a></p>
-          </form>
+          </div>
       </div>
   </div>
 </template>
@@ -25,7 +25,9 @@ export default {
     },
     methods: {
         signIn() {
-            firebase.auth().signInWithEmailAndPassword(this.email, this.password)
+            firebase
+            .auth()
+            .signInWithEmailAndPassword(this.email, this.password)
             .then(data => {
                 if(data.user.emailVerified) {
                     this.$store.dispatch("changeUserData", {
@@ -54,7 +56,7 @@ export default {
     font-weight: bold;
     text-align: center;
 }
-form {
+.form {
     text-align: center;
 }
 input {
